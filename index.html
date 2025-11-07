@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Costas Sem Dor - 7 Dias Para Transformar Sua Postura</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .hero .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 700px;
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .pain-points h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .pain-points .intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pain-card {
+            background: #fff5f5;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .pain-card h3 {
+            color: #ff6b6b;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .pain-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .solution h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .solution-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.9;
+        }
+
+        .solution-content p {
+            margin-bottom: 25px;
+        }
+
+        .solution-content strong {
+            color: #ffe66d;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2d3748;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* What You'll Get Section */
+        .program-details {
+            background: #f8f9fa;
+            padding: 80px 20px;
+        }
+
+        .program-details h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+
+        .day-by-day {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .day-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border-left: 6px solid #667eea;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .day-item h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .day-item p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2d3748;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bonus-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        .bonus-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffe66d;
+        }
+
+        .urgency {
+            background: #ff6b6b;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 500px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .pain-points h2,
+            .benefits h2,
+            .program-details h2,
+            .testimonials h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🧘‍♀️ Desafio Costas Sem Dor</h1>
+            <p class="subtitle">7 Dias Para Transformar Sua Postura e Eliminar a Dor nas Costas</p>
+
+            <div class="highlight">
+                <p><strong>Você está a apenas 15 minutos por dia de uma vida sem dor nas costas!</strong></p>
+                <p>Descubra o método comprovado de Yoga que já ajudou mais de 10.000 pessoas a recuperarem sua qualidade de vida.</p>
+            </div>
+
+            <a href="#inscricao" class="cta-button">QUERO COMEÇAR AGORA!</a>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>Você Convive Com Essas Situações?</h2>
+            <p class="intro">Se você se identificar com pelo menos uma dessas situações, este desafio foi feito especialmente para você:</p>
+
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>😣 Dor Constante</h3>
+                    <p>Acorda com dor nas costas e ela te acompanha durante todo o dia, tornando atividades simples um verdadeiro desafio.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>💼 Trabalho Sedentário</h3>
+                    <p>Passa horas sentado(a) na frente do computador e sente sua postura piorando a cada dia que passa.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>😴 Noites Mal Dormidas</h3>
+                    <p>Não consegue encontrar uma posição confortável para dormir por causa da dor nas costas.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>🚫 Limitações Diárias</h3>
+                    <p>Já não consegue fazer atividades que gosta ou brincar com seus filhos sem sentir dor.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>💊 Dependência de Remédios</h3>
+                    <p>Toma analgésicos constantemente mas a dor sempre volta, e você sabe que isso não é sustentável.</p>
+                </div>
+
+                <div class="pain-card">
+                    <h3>😰 Ansiedade e Estresse</h3>
+                    <p>A dor crônica está afetando seu humor, sua produtividade e seus relacionamentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2>A Solução Está Mais Próxima Do Que Você Imagina</h2>
+
+            <div class="solution-content">
+                <p>O <strong>Desafio Costas Sem Dor</strong> é um programa intensivo de 7 dias que combina técnicas milenares de Yoga com conhecimentos modernos de biomecânica e fisioterapia.</p>
+
+                <p>Diferente de tratamentos convencionais que apenas mascaram a dor, nosso método trabalha a <strong>causa raiz do problema</strong>: tensão muscular, desalinhamento postural e falta de mobilidade.</p>
+
+                <p>Em apenas <strong>15 minutos por dia</strong>, você será guiado(a) através de sequências cuidadosamente desenvolvidas que fortalecem, alongam e realinham sua coluna vertebral.</p>
+
+                <p>Não é sobre "aguentar a dor" ou fazer exercícios extremos. É sobre <strong>movimentos inteligentes</strong> que seu corpo realmente precisa para se curar naturalmente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>O Que Você Vai Conquistar Em 7 Dias</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Alívio Imediato</h3>
+                    <p>Sinta redução significativa da dor já nas primeiras sessões do desafio.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Postura Corrigida</h3>
+                    <p>Ombros alinhados, coluna ereta e uma presença mais confiante.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Força e Flexibilidade</h3>
+                    <p>Costas mais fortes e músculos equilibrados que sustentam sua coluna naturalmente.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">😊</div>
+                    <h3>Mais Energia</h3>
+                    <p>Sem dor crônica drenando sua energia, você terá mais disposição para tudo.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌙</div>
+                    <h3>Sono Reparador</h3>
+                    <p>Durma profundamente em qualquer posição, sem desconforto.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎊</div>
+                    <h3>Liberdade de Movimento</h3>
+                    <p>Volte a fazer tudo que ama sem medo da dor voltar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Details -->
+    <section class="program-details">
+        <div class="container">
+            <h2>O Que Você Vai Receber No Desafio</h2>
+
+            <div class="day-by-day">
+                <div class="day-item">
+                    <h3>📅 Dia 1: Despertando Sua Coluna</h3>
+                    <p>Movimentos suaves de mobilização para despertar sua consciência corporal e preparar seu corpo para a transformação.</p>
+                </div>
+
+                <div class="day-item">
+                    <h3>📅 Dia 2: Liberando a Tensão</h3>
+                    <p>Técnicas específicas para liberar os pontos de tensão acumulada que causam dor crônica.</p>
+                </div>
+
+                <div class="day-item">
+                    <h3>📅 Dia 3: Fortalecendo o Core</h3>
+                    <p>Exercícios de fortalecimento profundo do abdômen e região lombar para dar suporte à coluna.</p>
+                </div>
+
+                <div class="day-item">
+                    <h3>📅 Dia 4: Alongamento Terapêutico</h3>
+                    <p>Sequência de alongamentos que aumentam sua amplitude de movimento e eliminam rigidez.</p>
+                </div>
+
+                <div class="day-item">
+                    <h3>📅 Dia 5: Alinhamento Postural</h3>
+                    <p>Correção ativa da postura com exercícios que reprogramam seus padrões de movimento.</p>
+                </div>
+
+                <div class="day-item">
+                    <h3>📅 Dia 6: Respiração e Relaxamento</h3>
+                    <p>Técnicas de respiração que reduzem estresse muscular e promovem cura profunda.</p>
+                </div>
+
+                <div class="day-item">
+                    <h3>📅 Dia 7: Integração Total</h3>
+                    <p>Sequência completa que integra tudo que você aprendeu para resultados duradouros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Veja o Que Nossos Alunos Dizem</h2>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Sofria com dor nas costas há 5 anos. Em apenas 4 dias do desafio, já sentia 70% de melhora! Hoje consigo trabalhar o dia todo sem dor. É simplesmente incrível!"</p>
+                    <p class="testimonial-author">— Maria Silva, 42 anos</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Como programador, passava 10h por dia sentado. Minha postura era péssima e a dor constante. O desafio mudou minha vida completamente. Agora sei como cuidar das minhas costas!"</p>
+                    <p class="testimonial-author">— João Pedro, 35 anos</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Estava cética no começo, mas decidi dar uma chance. Melhor decisão que tomei! Não só a dor sumiu, como minha postura melhorou tanto que as pessoas notam."</p>
+                    <p class="testimonial-author">— Ana Paula, 38 anos</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Havia tentado fisioterapia, quiropraxia, tudo. Nada funcionava a longo prazo. Com o Desafio, aprendi a cuidar das minhas próprias costas. 3 meses depois, continuo sem dor!"</p>
+                    <p class="testimonial-author">— Carlos Eduardo, 50 anos</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"A dor nas costas estava me impedindo de brincar com meus filhos. Hoje corro, pulo e brinco sem nenhuma limitação. Recuperei minha qualidade de vida!"</p>
+                    <p class="testimonial-author">— Juliana Costa, 33 anos</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Simples, rápido e eficaz. São apenas 15 minutos por dia que mudaram completamente minha relação com meu corpo. Recomendo para todo mundo!"</p>
+                    <p class="testimonial-author">— Roberto Alves, 45 anos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="inscricao">
+        <div class="container">
+            <h2>Está Pronto Para Se Libertar Da Dor?</h2>
+
+            <p>Imagine acordar amanhã sem dor, com mais energia e disposição para aproveitar seu dia.</p>
+
+            <p>Imagine poder trabalhar, brincar com seus filhos, praticar esportes ou simplesmente sentar confortavelmente sem se preocupar com dor nas costas.</p>
+
+            <div class="bonus-box">
+                <h3>🎁 BÔNUS EXCLUSIVOS</h3>
+                <p><strong>✓</strong> Guia de Ergonomia no Trabalho (R$ 97)</p>
+                <p><strong>✓</strong> Sequência Rápida de 5 Minutos para Emergências (R$ 67)</p>
+                <p><strong>✓</strong> Acesso ao Grupo VIP de Suporte (R$ 147)</p>
+                <p><strong>✓</strong> Aulas Gravadas com Acesso Vitalício (R$ 297)</p>
+            </div>
+
+            <div class="urgency">
+                ⚡ VAGAS LIMITADAS: Apenas 100 vagas disponíveis nesta turma!
+            </div>
+
+            <a href="#" class="cta-button">GARANTIR MINHA VAGA AGORA!</a>
+
+            <p style="margin-top: 30px; font-size: 1.1rem;">💯 Garantia de 7 Dias: Se você não sentir melhora, devolvemos 100% do seu investimento.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Yoga Fitness - Desafio Costas Sem Dor</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Todos os direitos reservados | Política de Privacidade | Termos de Uso</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for CTA buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.pain-card, .benefit-card, .day-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
